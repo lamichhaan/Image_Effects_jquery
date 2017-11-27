@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Applying Effects to Images Using jQuery UI</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" 
+href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script type="text/javascript">
+       $(document).ready(function () {
+         $("#frame1").click(function (e) {
+             $("#img1").hide("fold", {size:22}, 2000);
+             $("#img1").show("scale", {origin:["top","left"]}, 2000);
+         });
+         $('#frame2').click(function (e) {
+             $('#img2').hide("explode", {pieces:9}, 2000);
+             $('#img2').show("scale", {origin:["top","left"]}, 2000);
+         });
+         $("#frame3").click(function (e) {
+            $('#img3').effect("bounce",3000);
+         });
+         $("#frame4").click(function (e) {
+             $("#img4").effect("clip",2000);
+             $("#img4").show("Drop", {origin:["top","left"]}, 5000);
+         });
+       });
+   </script>
+
+<style type="text/css">
+div { 
+  height: 110px; 
+  padding: 6px;
+  width: 150px; 
+  border: 2px solid #000;
+  display: inline-block; 
+  position: fixed;  
+}
+#frame1 {
+   top: 80px;
+   left: 20px;
+}
+#frame2 {
+   top: 80px;
+   left: 240px;
+}
+#frame3 {
+   top: 80px;
+   left: 460px;
+}
+#frame4 {
+   top: 80px;
+   left: 680px;
+}
+</style>
+
+</head>
+
+<body>
+   <h1>Applying Effects to Images Using jQuery UI</h1>
+   <div id="frame1">
+      <img id="img1" alt="Victoria" src="images/victoria.jpg" />
+   </div>
+   <div id="frame2">
+      <img id="img2" alt="British Columbia" src="images/british_columbia.jpg" />
+   </div>
+   <div id="frame3">
+      <img id="img3" alt="Wyoming" src="images/wyoming.jpg" />
+   </div>
+   <div id="frame4">
+      <img id="img4" alt="Niagara Falls" src="images/niagarafalls.jpg" />
+   </div>
+</body>
+</html>
